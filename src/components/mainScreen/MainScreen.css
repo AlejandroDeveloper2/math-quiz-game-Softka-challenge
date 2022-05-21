@@ -71,3 +71,9 @@
     font-size: 2rem;
     text-shadow: 0.1rem 0.1rem 0.1rem var(--black-opacity);
 }
+.loading-text{
+    color:var(--white);
+    font-weight:bold;
+    font-size: 2rem;
+    text-shadow: 0.1rem 0.1rem 0.1rem var(--black-opacity);
+}

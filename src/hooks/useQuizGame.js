@@ -53,6 +53,8 @@ const useQuizGame = () => {
   };
 
   const backingOutGame = () => {
+    setMatchs((prevMatchs) => prevMatchs + 1);
+    createPlayerObject();
     setIsPlayerBackingOut(true);
     setIsGameOver(true);
   };

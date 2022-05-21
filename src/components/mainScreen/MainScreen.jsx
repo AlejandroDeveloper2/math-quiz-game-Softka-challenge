@@ -156,6 +156,8 @@ const MainScreen = () => {
             <img src={AppLogo} alt="Game logo" className="app-logo" />
             <Ranking players={players} closeRankings={closeRankings} />
           </>
+        ) : questions.length === 0 ? (
+          <span className="loading-text"> Cargando preguntas...</span>
         ) : (
           <Quiz
             backingOutGame={backingOutGame}
