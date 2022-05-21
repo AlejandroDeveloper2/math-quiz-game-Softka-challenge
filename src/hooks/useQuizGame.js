@@ -148,7 +148,7 @@ const useQuizGame = () => {
     player.setMaxMatch(matchs);
 
     //save info player to database
-    player.checkIfPlayerExists();
+    player.checkIfPlayerExists(coins, correctAnswers, wrongAnswers, matchs);
   };
 
   const getAllPlayers = async () => {

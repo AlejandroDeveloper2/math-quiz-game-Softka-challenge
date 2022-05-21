@@ -56,7 +56,7 @@ const MainScreen = () => {
   useEffect(() => {
     getQuestions();
     // eslint-disable-next-line
-  }, [isGameActive]);
+  }, [isGameActive, isGameOver]);
 
   useEffect(() => {
     checkGameQuiz();

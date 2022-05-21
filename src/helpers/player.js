@@ -1,4 +1,5 @@
 import * as firestore from "firebase/firestore";
+import { where } from "firebase/firestore";
 
 import { database } from "../config/firebase";
 
@@ -80,28 +81,34 @@ class Player {
     );
   }
 
-  async checkIfPlayerExists() {
+  async checkIfPlayerExists(coins, correctAnswers, wrongAnswers, matchs) {
     const playerCollection = firestore.collection(database, "players");
-    const query = firestore.query(playerCollection);
+    const query = firestore.query(
+      playerCollection,
+      where("name", "==", this.getName())
+    );
 
     const querySnapshot = await firestore.getDocs(query);
-
     if (querySnapshot.empty) {
       this.saveNewPlayerData();
     } else {
       querySnapshot.docs.forEach((document) => {
-        if (document.data().name === this.getName()) {
-          this.setIdPlayer(document.id);
-          this.updatePlayerData();
-          console.log("El jugador existe!");
-        } else {
+        if (document.exists() === false) {
           this.saveNewPlayerData();
-          console.log("El jugador no existe!" + this.getName());
+        } else {
+          this.setIdPlayer(document.id);
+          this.setCorrectAnswers(document.data().correctAnswers);
+          this.setWrongAnswers(document.data().wrongAnswers);
+          this.setEarnedCoins(document.data().earnedCoins);
+          this.setMaxMatch(document.data().maxMatch);
+
+          this.updatePlayerData(coins, correctAnswers, wrongAnswers, matchs);
         }
       });
     }
   }
-  updatePlayerData() {
+
+  updatePlayerData(coins, correctAnswers, wrongAnswers, matchs) {
     console.log(this.getIdPlayer());
     const playerDocument = firestore.doc(
       database,
@@ -112,10 +119,10 @@ class Player {
       playerDocument,
       {
         name: this.getName(),
-        earnedCoins: this.getEarnedCoins(),
-        correctAnswers: this.getCorrectAnswers(),
-        wrongAnswers: this.getWrongAnswers(),
-        maxMatch: this.getMaxMatch(),
+        earnedCoins: coins + this.getEarnedCoins(),
+        correctAnswers: correctAnswers + this.getCorrectAnswers(),
+        wrongAnswers: wrongAnswers + this.getWrongAnswers(),
+        maxMatch: matchs + this.getMaxMatch(),
       },
       {
         merge: true,
