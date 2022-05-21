@@ -35,6 +35,7 @@ const MainScreen = () => {
     playerName,
     players,
     isRankingActive,
+    isPlayerBackingOut,
     getQuestions,
     checkAnswerQuestion,
     checkGameQuiz,
@@ -44,6 +45,7 @@ const MainScreen = () => {
     getAllPlayers,
     seeRanking,
     closeRankings,
+    backingOutGame,
   } = useQuizGame();
 
   const showQuizGameUI = () => {
@@ -106,11 +108,15 @@ const MainScreen = () => {
             <img src={AppLogo} alt="Game logo" className="app-logo" />
             <div className="result-panel">
               <div className="row">
-                {isPlayerWinner ? (
+                {isPlayerBackingOut ? (
+                  <label className="status-text orange">
+                    Te has retirado del quiz!
+                  </label>
+                ) : isPlayerWinner && !isPlayerBackingOut ? (
                   <label className="status-text green"> Ganaste! </label>
-                ) : (
+                ) : !isPlayerWinner && !isPlayerBackingOut ? (
                   <label className="status-text red"> Oh no! perdiste! </label>
-                )}
+                ) : null}
               </div>
               <div className="row">
                 <PlayIcon />
@@ -152,7 +158,7 @@ const MainScreen = () => {
           </>
         ) : (
           <Quiz
-            exitGame={exitGame}
+            backingOutGame={backingOutGame}
             questions={questions}
             questionIndex={questionIndex}
             checkAnswerQuestion={checkAnswerQuestion}

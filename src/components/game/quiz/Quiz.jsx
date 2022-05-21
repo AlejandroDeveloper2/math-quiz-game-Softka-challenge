@@ -12,7 +12,7 @@ import ExitIcon from "../../svgs/ExitIcon";
 
 const Quiz = (props) => {
   const {
-    exitGame,
+    backingOutGame,
     questions,
     questionIndex,
     checkAnswerQuestion,
@@ -25,14 +25,15 @@ const Quiz = (props) => {
     <div>
       <Modal isModalVisible={isModalVisible} hideModal={hideModal}>
         <div className="confirmContainer">
-          <label className="text">
-            ¿Estas seguro que quieres retirarte del quiz?
+          <label className="text-label">
+            ¿Estas seguro que quieres retirarte del quiz? No perderas lo que has
+            ganado!
           </label>
           <Button
             label="Si, retirarme"
             icon={<ExitIcon />}
             backgroundStyle="play"
-            action={exitGame}
+            action={backingOutGame}
           />
         </div>
       </Modal>

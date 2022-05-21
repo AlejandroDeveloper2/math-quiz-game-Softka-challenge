@@ -23,6 +23,7 @@ const useQuizGame = () => {
 
   const [isGameOver, setIsGameOver] = useState(false);
   const [isPlayerWinner, setIsPlayerWinner] = useState(false);
+  const [isPlayerBackingOut, setIsPlayerBackingOut] = useState(false);
 
   const [randomIndex, setRandomIndex] = useState(0);
 
@@ -49,6 +50,11 @@ const useQuizGame = () => {
     resetGameQuiz();
     createPlayerObject();
     setIsGameActive(false);
+  };
+
+  const backingOutGame = () => {
+    setIsPlayerBackingOut(true);
+    setIsGameOver(true);
   };
 
   const chooseRandomQuestions = () => {
@@ -118,6 +124,7 @@ const useQuizGame = () => {
       setWrongAnswers((prevWrongAnswers) => prevWrongAnswers + 1);
       setCoins(0);
       setMatchs((prevMatchs) => prevMatchs + 1);
+      setIsPlayerBackingOut(false);
       setIsGameOver(true);
       createPlayerObject();
     }
@@ -181,6 +188,7 @@ const useQuizGame = () => {
     playerName,
     players,
     isRankingActive,
+    isPlayerBackingOut,
     activeGame,
     exitGame,
     getQuestions,
@@ -190,6 +198,7 @@ const useQuizGame = () => {
     getAllPlayers,
     seeRanking,
     closeRankings,
+    backingOutGame,
   };
 };
 export default useQuizGame;
