@@ -1,0 +1,25 @@
+.statictics-panel{
+    width: 10%;
+    height: 40rem;
+    background-color:var(--black-opacity-3);
+    border-radius:20px;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:1rem;
+    align-items:center;
+    box-shadow: 1rem 1rem 0.5rem var(--black-opacity);
+}
+.statistic{
+    width:80%;
+    height: 5.625rem;
+    border-radius:20px;
+    background-color:var(--primary-color);
+    display: inline-flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:center;
+    color:var(--white);
+    font-weight:bold;
+    font-size:1.5rem;
+}

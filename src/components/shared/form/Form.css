@@ -1,0 +1,30 @@
+.formContainer{
+    width: 100%;
+    height:auto;
+    justify-content:center;
+    align-items:center;
+    display: flex;
+    flex-direction:column;
+    gap:1.5rem;
+}
+.input{
+    border:none;
+    width:12.5rem;
+    height: 3rem;
+    padding:0.5rem;
+    font-size:1rem;
+    text-align:center;
+    border-radius:20px;
+    background-color:var(--dark-gray);
+    color:var(--white);
+    outline:none;
+    border: 5px solid var(--white);
+}
+.label{
+    color:var(--white);
+    font-size:1.1rem;
+}
+.input:focus{
+    border: 5px solid var(--tiny-blue);
+}
+   

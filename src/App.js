@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// eslint-disable-next-line
+import { firebaseApp } from "./config/firebase";
+
+import MainScreen from "./components/mainScreen/MainScreen";
+import Footer from "./components/shared/footer/Footer";
+
+import "./components/mainScreen/MainScreen.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="main-container">
+      <MainScreen />
+      <Footer />
+    </main>
   );
 }
 

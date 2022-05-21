@@ -1,0 +1,48 @@
+.app-button{
+    width: 12.5rem;
+    height: 5rem;
+    filter: drop-shadow(10px 10px 4px var(--black-opacity));
+    display: inline-flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items:center;
+    border-radius:20px;
+    border:5px solid var(--white);
+    cursor: pointer;
+    color:var(--white);
+    font-size:1.25rem;
+    font-weight:bold;
+    gap:1rem;
+}
+
+.play{
+    background:var(--secondary-color);
+}
+.play:hover{
+    background:var(--dark-gray);
+    transform:rotate(8deg);
+}
+.rank{
+    background:var(--dark-gray);
+}
+.rank:hover{
+    background:var(--secondary-color);
+    transform:rotate(-8deg);
+}
+.close{
+    position:absolute;
+    top:10px;
+    right:10px;
+    background:var(--primary-color);
+    width: 4rem;
+    height: 4rem;
+}
+.close:hover{
+    background:var(--tiny-blue);
+}
+
+@media screen and (max-width:700px) {
+    .app-button{
+        font-size:1rem;
+    }
+}

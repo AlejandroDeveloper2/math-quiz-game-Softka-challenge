@@ -1,0 +1,21 @@
+.answer-container{
+    padding:2rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:30px;
+    background-color:var(--tiny-blue);
+    cursor: pointer;
+    border: none;
+    box-shadow: 10px 10px 10px var(--black-opacity);
+}
+.answer-container:hover{
+    background-color:var(--tiny-blue-2);
+    transform:rotate(5deg);
+}
+.answer-text{
+    font-size: 4rem;
+    color:var(--white);
+    font-weight:bold;
+    text-align: center;
+}

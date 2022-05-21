@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+:root{
+    --primary-color:#2E68BD;
+    --white:#ffffff;
+    --secondary-color:#405866;
+    --dark-gray:#354A54;
+    --tiny-blue:#42A5F5;
+    --tiny-blue-2:#90CAF9;
+    --black-opacity:rgba(0,0,0,0.25);
+    --black-opacity-2:rgba(0,0,0,0.50);
+    --black-opacity-3:rgba(0,0,0,0.17);
+}
+*{
+    transition:all 0.6s ease;
+}
+body{
+    padding:0;
+    background-color:var(--primary-color);
+    margin:0;
+    font-size:16;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+@media screen and (max-width:700px) {
+    body{
+        font-size:12px;
+    }
+}
