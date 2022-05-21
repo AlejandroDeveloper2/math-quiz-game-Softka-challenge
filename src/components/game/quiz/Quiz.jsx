@@ -37,7 +37,7 @@ const Quiz = (props) => {
           />
         </div>
       </Modal>
-      <div className="container">
+      <div className="container-quiz">
         <div className="quiz-container">
           <div className="header">
             <img src={AppLogo} alt="Game logo" className="app-logo" />

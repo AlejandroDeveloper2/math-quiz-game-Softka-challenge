@@ -1,4 +1,4 @@
-.container{
+.container-quiz{
     width: 100vw;
     height: auto;
     justify-content:center;
@@ -38,12 +38,4 @@
     font-size:1.2rem;
     text-align: center;
     width:80%;
-}
-@media screen and(max-width:900px){
-    .header{
-        width: 100%;
-        gap:0rem;
-        flex-direction: column;
-        display:flex;
-    }
 }

@@ -20,15 +20,15 @@ const Ranking = (props) => {
         players?.map((player, index) => (
           <div key={player.name} className="row-ranking">
             <span className="player-position"> {index + 1} </span>
-            <label className="text"> {player.name} </label>
+            <label className="text-rank resalted"> {player.name} </label>
             <CoinIcon />
-            <label className="text"> {player.earnedCoins} </label>
+            <label className="text-rank"> {player.earnedCoins} </label>
             <CorrectAnswerIcon />
-            <label className="text"> {player.correctAnswers} </label>
+            <label className="text-rank"> {player.correctAnswers} </label>
             <WrongAnswerIcon />
-            <label className="text"> {player.wrongAnswers} </label>
+            <label className="text-rank"> {player.wrongAnswers} </label>
             <MatchIcon />
-            <label className="text"> {player.maxMatch} </label>
+            <label className="text-rank"> {player.maxMatch} </label>
           </div>
         ))
       )}
